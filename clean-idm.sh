@@ -1,5 +1,6 @@
 #!/bin/bash
 #OpenIDM Shutdown, Zip Logs, Clear Felix-Cache and then restart 
+#Run this script with sudo so that you have the privs to remove cache files and to start/stop openidm
 
 # settings
 idmhost=`hostname`
