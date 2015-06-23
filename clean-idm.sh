@@ -23,6 +23,8 @@ echo "Logs are saved to /var/tmp/openidm.logs.tar"
 echo "Removing cache files ..."
 cd $idmhome/felix-cache
 rm -Rf bundle* cache*
+ls -latr
+echo "Look ma ... no files ..."
 
 # restart openidm
 echo "Starting OpenIDM ..."
