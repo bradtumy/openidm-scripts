@@ -10,20 +10,28 @@ idmstartcmd=$starthome/openidm
 cd $idmhome
 
 # shutdown openidm 
+echo "Stopping OpenIDM ..."
 $idmstartcmd stop
 
 
 # tar logs
+echo "Backing up log files ..."
 tar cvf /var/tmp/openidm.logs.tar $idmhome/logs/*
 echo "Logs are saved to /var/tmp/openidm.logs.tar"
 
 # clean felix-cache
+echo "Removing cache files ..."
 cd $idmhome/felix-cache
 rm -Rf bundle* cache*
 
 # restart openidm
+echo "Starting OpenIDM ..."
 $idmstartcmd start
-echo "OpenIDM is restarting"
 
+# checking status
+netstat -an | grep 8080
+
+# clean up
+echo "All done ... bye"
 
 
