@@ -14,7 +14,6 @@ cd $idmhome
 echo "Stopping OpenIDM ..."
 $idmstartcmd stop
 
-
 # tar logs
 echo "Backing up log files ..."
 tar cvf /var/tmp/openidm.logs.tar $idmhome/logs/*
@@ -36,5 +35,3 @@ netstat -an | grep 8080
 
 # clean up
 echo "All done ... bye"
-
-
