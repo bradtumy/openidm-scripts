@@ -95,16 +95,13 @@
         if (request.action == "changepass") {
 
                 var users = JSON.parse(request.content); // make sure that the request object is in JSON format and store in a local variable
-
                 var size = Object.keys(users).length; // how many users are we updating in this request
                 var userContext = "managed/user/"; // set the base context of the managed user object 
-
 
                 for ( var i = 0; i < size; i++ ) {
                     // patch each user with new password
                     var uname = users[i].username;  // grab the username from the user object
                     var upass = users[i].password; // grab the new password from the user object
-
                     var userid = userContext+uname; 
 
                     var thisUser = openidm.read(userid); // check to make sure the user exists before we try and patch it.
@@ -119,8 +116,6 @@
         }
  
         return {
-
-                // not sure that we need to return anything at all here ... 
             
                 method: "action",
                 action: request.action,
